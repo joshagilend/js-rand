@@ -1,0 +1,2 @@
+# js-rand
+rand

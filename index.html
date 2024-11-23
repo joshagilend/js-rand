@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Integer Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Integer Function Examples</h1>
+    <p class="output" id="example1"></p>
+    <p class="output" id="example2"></p>
+    <p class="output" id="example3"></p>
+    <p class="output" id="diceRoll"></p>
+    <p class="output" id="randomColor"></p>
+    <p class="output" id="coinFlip"></p>
+    <p class="output" id="randomYear"></p>
+    <p class="output" id="randomGrade"></p>
+    <p class="output" id="randomCharacter"></p>
+    <p class="output" id="randomBoolean"></p>
+
+    <script>
+        // Generate a random integer between min (inclusive) and max (exclusive)
+        function randInt(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        // Output examples
+        document.getElementById("example1").textContent = `Random integer between 1 and 9: ${randInt(1, 10)}`;
+        document.getElementById("example2").textContent = `Random integer between 0 and 4: ${randInt(0, 5)}`;
+        document.getElementById("example3").textContent = `Random integer between 50 and 99: ${randInt(50, 100)}`;
+
+        const diceRoll = randInt(1, 7);
+        document.getElementById("diceRoll").textContent = `You rolled: ${diceRoll}`;
+
+        const colors = ['red', 'green', 'blue', 'yellow'];
+        document.getElementById("randomColor").textContent = `Random color: ${colors[randInt(0, colors.length)]}`;
+
+        const coin = randInt(0, 2) === 0 ? 'Heads' : 'Tails';
+        document.getElementById("coinFlip").textContent = `Coin flip: ${coin}`;
+
+        document.getElementById("randomYear").textContent = `Random year between 2000 and 2022: ${randInt(2000, 2023)}`;
+
+        const grades = ['A', 'B', 'C', 'D', 'F'];
+        document.getElementById("randomGrade").textContent = `Random grade: ${grades[randInt(0, grades.length)]}`;
+
+        const name = "JavaScript";
+        document.getElementById("randomCharacter").textContent = `Random character from "JavaScript": ${name[randInt(0, name.length)]}`;
+
+        const isLucky = randInt(0, 2) === 1;
+        document.getElementById("randomBoolean").textContent = `Are you lucky? ${isLucky}`;
+    </script>
+</body>
+</html>
